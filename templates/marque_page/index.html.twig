@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marques pages{% endblock %}
+
+{% block body %}
+
+    <style>
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            color: red;
+        }
+        table{
+            width: 50%;
+        }
+        th{
+            background-color: lightblue;
+        }
+        table,th,td{
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        td,th{
+            padding: 10px;
+        }
+    </style>
+    <div class="content">
+        <h1>Liste complète des marques-page</h1>
+        <table>
+            <tr>
+                <th>Url</th>
+                <th>Commentaire</th>
+            </tr>
+            {% for mp in marque_page %}
+                <tr>
+                    <td>{{ mp.url }}</td>
+                    <td>{{ mp.commentaire }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
